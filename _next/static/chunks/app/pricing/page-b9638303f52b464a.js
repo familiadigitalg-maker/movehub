@@ -165,12 +165,9 @@ function N() {
   document.head.appendChild(link);
 });
 
-
 let g = (planType, planPrice) => {
-  // Função f() do seu código original
   f({ type: planType, price: planPrice });
 
-  // Adiciona estilo do glow se ainda não existir
   if (!document.getElementById("glow-style")) {
     const style = document.createElement("style");
     style.id = "glow-style";
@@ -211,7 +208,6 @@ let g = (planType, planPrice) => {
     document.head.appendChild(style);
   }
 
-  // Cria o modal
   const modal = document.createElement("div");
   modal.className = "fixed inset-0 bg-black/50 flex items-center justify-center z-50";
   modal.innerHTML = `
@@ -271,36 +267,29 @@ let g = (planType, planPrice) => {
     });
   });
 
-  // Botão Proceed to Payment
   modal.querySelector("#proceedPayment").addEventListener("click", () => {
     if (!selectedMethod) return;
 
+    let url = "";
+
     if (selectedMethod === "PayPal") {
-      let url = planType === "weekly" ? "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD"
-              : planType === "monthly" ? "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=4&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD"
-              : "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=8&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
-      window.open(url, "_blank");
-      return;
+      if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
+      else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=4&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
+      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=8&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
+    } else if (selectedMethod === "Robux") {
+      if (planType === "weekly") url = "https://www.roblox.com/catalog/86763827406678/Weekly";
+      else if (planType === "monthly") url = "https://www.roblox.com/catalog/109090893623975/Monthly";
+      else url = "https://www.roblox.com/catalog/112388426174566/Lifetime";
+    } else if (selectedMethod === "Pix") {
+      if (planType === "weekly") url = "/weekpix";
+      else if (planType === "monthly") url = "/monthpix";
+      else url = "/lifetimepix";
     }
 
-    if (selectedMethod === "Robux") {
-      let url = planType === "weekly" ? "https://www.roblox.com/catalog/86763827406678/Weekly"
-              : planType === "monthly" ? "https://www.roblox.com/catalog/109090893623975/Monthly"
-              : "https://www.roblox.com/catalog/112388426174566/Lifetime";
-      window.open(url, "_blank");
-      return;
-    }
-
-    if (selectedMethod === "Pix") {
-      let url = planType === "weekly" ? "/weekpix"
-              : planType === "monthly" ? "/monthpix"
-              : "/lifetimepix";
-      // Navega e faz reload automático
-      window.location.href = url;
-      return;
-    }
+    if (url) window.open(url, "_blank");
   });
 };
+
 
 
   return (0, s.jsxs)("section", {
