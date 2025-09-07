@@ -48,22 +48,43 @@
                   })
                 ]
               }),
-              (0, n.jsxs)("div", {
+(0, n.jsxs)("div", {
                 className: "flex justify-center items-center gap-6 text-sm flex-1",
                 children: [
                   (0, n.jsx)(a.default, {
                     href: "/home",
                     className: "text-muted-foreground transition-colors hover:text-foreground",
+                    onClick: (e) => { 
+                      e.preventDefault(); 
+                      router.push("/home");
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 40);
+                    },
                     children: "Home"
                   }),
                   (0, n.jsx)(a.default, {
                     href: "/games",
                     className: "text-muted-foreground transition-colors hover:text-foreground",
+                    onClick: (e) => { 
+                      e.preventDefault(); 
+                      router.push("/games");
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 40);
+                    },
                     children: "Games"
                   }),
                   (0, n.jsx)(a.default, {
                     href: "/pricing",
                     className: "text-muted-foreground transition-colors hover:text-foreground",
+                    onClick: (e) => { 
+                      e.preventDefault(); 
+                      router.push("/pricing");
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 40);
+                    },
                     children: "Pricing"
                   }),
                   (0, n.jsx)(a.default, {
