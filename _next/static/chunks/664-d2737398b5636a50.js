@@ -48,33 +48,37 @@
                   })
                 ]
               }),
-              (0, n.jsxs)("div", {
-                className: "flex justify-center items-center gap-6 text-sm flex-1",
-                children: [
-                  (0, n.jsx)(a.default, {
-                    href: "/home",
-                    className: "text-muted-foreground transition-colors hover:text-foreground",
-                    children: "Home"
-                  }),
-                  (0, n.jsx)(a.default, {
-                    href: "/games",
-                    className: "text-muted-foreground transition-colors hover:text-foreground",
-                    children: "Games"
-                  }),
-                  (0, n.jsx)(a.default, {
-                    href: "/pricing",
-                    className: "text-muted-foreground transition-colors hover:text-foreground",
-                    children: "Pricing"
-                  }),
-                  (0, n.jsx)(a.default, {
-                    href: "https://discord.gg/kKHztfCZdG",
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    className: "text-muted-foreground transition-colors hover:text-foreground",
-                    children: "Discord"
-                  })
-                ]
-              })
+(0, n.jsxs)("div", {
+  className: "flex justify-center items-center gap-6 text-sm flex-1",
+  children: [
+    (0, n.jsx)(a.default, {
+      href: "/home",
+      className: "text-muted-foreground transition-colors hover:text-foreground",
+      onClick: (e) => { e.preventDefault(); router.push("/home"); },
+      children: "Home"
+    }),
+    (0, n.jsx)(a.default, {
+      href: "/games",
+      className: "text-muted-foreground transition-colors hover:text-foreground",
+      onClick: (e) => { e.preventDefault(); router.push("/games"); },
+      children: "Games"
+    }),
+    (0, n.jsx)(a.default, {
+      href: "/pricing",
+      className: "text-muted-foreground transition-colors hover:text-foreground",
+      onClick: (e) => { e.preventDefault(); router.push("/pricing"); },
+      children: "Pricing"
+    }),
+    (0, n.jsx)(a.default, {
+      href: "https://discord.gg/kKHztfCZdG",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      className: "text-muted-foreground transition-colors hover:text-foreground",
+      children: "Discord"
+    })
+  ]
+})
+
             ]
           })
         })
