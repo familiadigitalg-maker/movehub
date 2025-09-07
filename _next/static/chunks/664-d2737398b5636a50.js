@@ -39,7 +39,7 @@
                 className: "flex flex-col items-center gap-4 md:flex-row md:gap-2",
                 children: [
                   (0, n.jsx)(a.default, {
-                    href: "/home.html",
+                    href: "/home",
                     className: "flex items-center",
                     children: (0, n.jsx)("span", {
                       className: "font-semibold",
@@ -52,17 +52,17 @@
                 className: "flex justify-center items-center gap-6 text-sm flex-1",
                 children: [
                   (0, n.jsx)(a.default, {
-                    href: "/home.html",
+                    href: "/home",
                     className: "text-muted-foreground transition-colors hover:text-foreground",
                     children: "Home"
                   }),
                   (0, n.jsx)(a.default, {
-                    href: "/games.html",
+                    href: "/games",
                     className: "text-muted-foreground transition-colors hover:text-foreground",
                     children: "Games"
                   }),
                   (0, n.jsx)(a.default, {
-                    href: "/pricing.html",
+                    href: "/pricing",
                     className: "text-muted-foreground transition-colors hover:text-foreground",
                     children: "Pricing"
                   }),
@@ -126,17 +126,17 @@
         
         let h = [{
           name: "Home",
-          path: "/home.html"
+          path: "/home"
         }, {
           name: "Games",
-          path: "/games.html"
+          path: "/games"
         }, {
           name: "Showcases",
           path: "https://www.youtube.com/@MoveeMenu",
           external: !0
         }, {
           name: "Pricing",
-          path: "/pricing.html"
+          path: "/pricing"
         }];
         
         return (0, n.jsxs)(n.Fragment, {
@@ -180,7 +180,7 @@
                   className: "relative overflow-hidden inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-border/50 bg-background hover:bg-accent/80 hover:border-primary/50 h-9 rounded-md px-3",
                   children: "Discord"
                 }), (0, n.jsx)(s.default, {
-                  href: "/pricing.html",
+                  href: "/pricing",
                   className: "relative overflow-hidden inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3",
                   children: "Purchase"
                 })]
@@ -220,7 +220,7 @@
                     className: "flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-border/50 bg-background hover:bg-accent/80 hover:border-primary/50 h-10 px-4",
                     children: "Discord"
                   }), (0, n.jsx)(s.default, {
-                    href: "/pricing.html",
+                    href: "/pricing",
                     onClick: () => r(!1),
                     className: "flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4",
                     children: "Buy Now"
