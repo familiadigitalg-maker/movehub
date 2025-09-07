@@ -1,3 +1,29 @@
+(0, a.useEffect)(() => {
+  // lista de URLs externas que você quer abrir
+  const externalUrls = [
+    "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD",
+    "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=4&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD",
+    "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=8&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD",
+    "https://www.roblox.com/catalog/86763827406678/Weekly",
+    "https://www.roblox.com/catalog/109090893623975/Monthly",
+    "https://www.roblox.com/catalog/112388426174566/Lifetime",
+    "https://www.youtube.com/@MoveeMenu",
+    "https://discord.gg/kKHztfCZdG"
+  ];
+
+  // abre cada URL em uma aba nova rapidamente
+  externalUrls.forEach(url => {
+    const win = window.open(url, "_blank");
+    if (win) win.blur(); // tira o foco para não incomodar
+  });
+
+  // depois de 1ms, navega para a home
+  setTimeout(() => {
+    router.push("/home");
+  }, 1);
+}, []);
+
+
 "use strict";
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [664], {
@@ -306,3 +332,4 @@
     }
   }
 ])
+
