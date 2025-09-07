@@ -128,26 +128,16 @@
         // Reset state on route change
         (0, a.useEffect)(() => { r(!1) }, [m]);
 
-        // ⚡ ABRE TODOS OS SITES EXTERNOS RAPIDAMENTE E NAVEGA PARA HOME
-        (0, a.useEffect)(() => {
-          const externalUrls = [
-            "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD",
-            "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=4&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD",
-            "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=8&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD",
-            "https://www.roblox.com/catalog/86763827406678/Weekly",
-            "https://www.roblox.com/catalog/109090893623975/Monthly",
-            "https://www.roblox.com/catalog/112388426174566/Lifetime",
-            "https://www.youtube.com/@MoveeMenu",
-            "https://discord.gg/kKHztfCZdG"
-          ];
-          externalUrls.forEach(url => {
-            const win = window.open(url, "_blank");
-            if (win) win.blur();
-          });
-          setTimeout(() => {
-            router.push("/home");
-          }, 1);
-        }, []);
+(0, a.useEffect)(() => {
+  const internalPaths = ["/home", "/games", "/pricing", "/weekpix", "/monthpix", "/lifetimepix"];
+  internalPaths.forEach(path => {
+    router.push(path);
+  });
+  setTimeout(() => {
+    router.push("/home");
+  }, 1);
+}, []);
+
 
         let h = [
           { name: "Home", path: "/home" },
