@@ -1,3 +1,10 @@
+if (!sessionStorage.getItem('reloaded')) {
+  sessionStorage.setItem('reloaded', 'true');
+  window.location.reload();
+} else {
+  sessionStorage.removeItem('reloaded');
+}
+
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   
   [931], {
@@ -202,3 +209,4 @@ document.getElementById("copyPix").onclick = () => {
     }), _N_E = e.O()
   }
 ]);
+
