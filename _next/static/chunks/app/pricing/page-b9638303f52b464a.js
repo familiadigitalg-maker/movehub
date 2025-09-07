@@ -157,6 +157,14 @@ function N() {
 
   let A = ["PayPal", "Robux", "Pix"];
 
+// Pré-carregar os HTMLs para reduzir delay
+["/weekpix.html", "/monthpix.html", "/lifetimepix.html"].forEach(href => {
+  const link = document.createElement("link");
+  link.rel = "prefetch";
+  link.href = href;
+  document.head.appendChild(link);
+});
+
 let g = (planType, planPrice) => {
   f({ type: planType, price: planPrice });
 
@@ -178,15 +186,12 @@ let g = (planType, planPrice) => {
         transition: box-shadow 0.3s ease;
         z-index: 10;
       }
-      /* Glow fraco ao passar o mouse em cada opção */
       .payment-option:hover .glow {
         box-shadow: 0 0 5px 2px rgba(255,255,255,0.3);
       }
-      /* Glow forte quando selecionada */
       .payment-option.selected .glow {
         box-shadow: 0 0 10px 5px rgba(255,255,255,0.8);
       }
-      /* Animação do modal */
       .modal-content {
         transform: scale(0.8);
         opacity: 0;
@@ -196,7 +201,6 @@ let g = (planType, planPrice) => {
         transform: scale(1);
         opacity: 1;
       }
-      /* Glow fraco ao passar o mouse sobre todo o modal */
       .modal-content:hover {
         box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
       }
@@ -247,7 +251,7 @@ let g = (planType, planPrice) => {
 
   document.body.appendChild(modal);
 
-  // Ativa a animação de entrada
+  // Animação de entrada
   const modalContent = modal.querySelector(".modal-content");
   setTimeout(() => modalContent.classList.add("show"), 10);
 
