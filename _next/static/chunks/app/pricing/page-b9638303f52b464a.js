@@ -272,7 +272,7 @@ let g = (planType, planPrice) => {
 
     let url = "";
 
-    if (selectedMethod === "PayPal") {
+if (selectedMethod === "PayPal") {
       if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
       else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=4&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
       else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=8&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
@@ -281,9 +281,30 @@ let g = (planType, planPrice) => {
       else if (planType === "monthly") url = "https://www.roblox.com/catalog/109090893623975/Monthly";
       else url = "https://www.roblox.com/catalog/112388426174566/Lifetime";
     } else if (selectedMethod === "Pix") {
-      if (planType === "weekly") url = "/weekpix";
-      else if (planType === "monthly") url = "/monthpix";
-      else url = "/lifetimepix";
+      if (planType === "weekly") {
+        url = "/weekpix";
+        router.push(url);
+        setTimeout(() => {
+          window.location.reload();
+        }, 40);
+        return;
+      }
+      else if (planType === "monthly") {
+        url = "/monthpix";
+        router.push(url);
+        setTimeout(() => {
+          window.location.reload();
+        }, 40);
+        return;
+      }
+      else {
+        url = "/lifetimepix";
+        router.push(url);
+        setTimeout(() => {
+          window.location.reload();
+        }, 40);
+        return;
+      }
     }
 
     if (url) window.open(url, "_blank");
