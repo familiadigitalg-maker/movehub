@@ -272,20 +272,19 @@ let g = (planType, planPrice) => {
 
     let url = "";
 
-if (selectedMethod === "PayPal") {
-  if (planType === "weekly") window.open("https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD", "_blank");
-  else if (planType === "monthly") window.open("https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=4&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD", "_blank");
-  else window.open("https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=8&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD", "_blank");
-} else if (selectedMethod === "Robux") {
-  if (planType === "weekly") window.open("https://www.roblox.com/catalog/86763827406678/Weekly", "_blank");
-  else if (planType === "monthly") window.open("https://www.roblox.com/catalog/109090893623975/Monthly", "_blank");
-  else window.open("https://www.roblox.com/catalog/112388426174566/Lifetime", "_blank");
-} else if (selectedMethod === "Pix") {
-  if (planType === "weekly") router.push("/weekpix");
-  else if (planType === "monthly") router.push("/monthpix");
-  else router.push("/lifetimepix");
-}
-
+    if (selectedMethod === "PayPal") {
+      if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
+      else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=4&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
+      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=8&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
+    } else if (selectedMethod === "Robux") {
+      if (planType === "weekly") url = "https://www.roblox.com/catalog/86763827406678/Weekly";
+      else if (planType === "monthly") url = "https://www.roblox.com/catalog/109090893623975/Monthly";
+      else url = "https://www.roblox.com/catalog/112388426174566/Lifetime";
+    } else if (selectedMethod === "Pix") {
+      if (planType === "weekly") url = "/weekpix";
+      else if (planType === "monthly") url = "/monthpix";
+      else url = "/lifetimepix";
+    }
 
     if (url) window.open(url, "_blank");
   });
