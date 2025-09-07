@@ -139,16 +139,9 @@
                 children: "Move Hub"
               }), (0, s.jsx)("p", {
               }), (0, s.jsxs)("div", {
-className: "flex flex-wrap gap-4 justify-center animate-fade-in",
+                className: "flex flex-wrap gap-4 justify-center animate-fade-in",
                 children: [(0, s.jsx)(c.default, {
                   href: "/pricing",
-                  onClick: (e) => {
-                    e.preventDefault();
-                    router.push("/pricing");
-                    setTimeout(() => {
-                      window.location.reload();
-                    }, 100);
-                  },
                   children: (0, s.jsx)(d.z, {
                     size: "lg",
                     className: "rounded-full",
