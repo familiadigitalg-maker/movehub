@@ -127,7 +127,7 @@
         m = r(9205);  
       var v = r(3145);
 
-function k() {
+      function k() {
         return (0, s.jsx)("section", {
           className: "py-24 md:py-28 lg:py-32",
           children: (0, s.jsx)("div", {
@@ -139,7 +139,7 @@ function k() {
                 children: "Move Hub"
               }), (0, s.jsx)("p", {
               }), (0, s.jsxs)("div", {
-                className: "flex flex-wrap gap-4 justify-center animate-fade-in",
+className: "flex flex-wrap gap-4 justify-center animate-fade-in",
                 children: [(0, s.jsx)(c.default, {
                   href: "/pricing",
                   onClick: (e) => {
