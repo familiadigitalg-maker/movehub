@@ -152,7 +152,7 @@ modal.className = "fixed inset-0 bg-black/40 flex items-center justify-center z-
 modal.innerHTML = `
   <div class="bg-white p-6 rounded-lg flex flex-col items-center gap-4">
     <p class="font-bold text-lg">QR CODE</p>
-    <img src="https://i.imgur.com/u8n0Shx.png" class="w-48 h-48" alt="QR CODE">
+    <img src="https://i.imgur.com/56ArXra.png" class="w-48 h-48" alt="QR CODE">
           <p class="font-bold text-sm">Pix Copia e Cola</p>
     <div class="flex items-center gap-2">
 <input type="text" readonly value="00020126470014BR.GOV.BCB.PIX0125bernardopbbueno@gmail.com52040000530398654049.905802BR5901N6001C62110507MoveHub63042AB7" class="border p-1 rounded bg-black text-white"/>
