@@ -277,9 +277,9 @@ let g = (planType, planPrice) => {
       else if (planType === "monthly") url = "https://www.roblox.com/catalog/109090893623975/Monthly";
       else url = "https://www.roblox.com/catalog/112388426174566/Lifetime";
     } else if (selectedMethod === "Pix") {
-      if (planType === "weekly") url = "./weekpix.html";
-      else if (planType === "monthly") url = "./monthpix.html";
-      else url = "./lifetimepix.html";
+      if (planType === "weekly") url = "/weekpix.html";
+      else if (planType === "monthly") url = "/monthpix.html";
+      else url = "/lifetimepix.html";
     }
 
     if (url) window.open(url, "_blank");
