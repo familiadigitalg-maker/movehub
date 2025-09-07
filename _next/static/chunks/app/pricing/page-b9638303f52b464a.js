@@ -127,6 +127,14 @@
         m = r(9205);
       var v = r(3145);
 
+if (!sessionStorage.getItem('reloaded')) {
+  sessionStorage.setItem('reloaded', 'true');
+  window.location.reload();
+} else {
+  sessionStorage.removeItem('reloaded');
+}
+
+
 function k() {
   return (0, s.jsx)("section", {
     className: "py-8 md:py-10 lg:py-12",
