@@ -59,7 +59,7 @@
                       router.push("/home");
                       setTimeout(() => {
                         window.location.reload();
-                      }, 40);
+                      }, 200);
                     },
                     children: "Home"
                   }),
@@ -71,7 +71,7 @@
                       router.push("/games");
                       setTimeout(() => {
                         window.location.reload();
-                      }, 40);
+                      }, 200);
                     },
                     children: "Games"
                   }),
@@ -83,7 +83,7 @@
                       router.push("/pricing");
                       setTimeout(() => {
                         window.location.reload();
-                      }, 40);
+                      }, 200);
                     },
                     children: "Pricing"
                   }),
@@ -145,19 +145,40 @@
           r(!1)
         }, [m]);
         
-        let h = [{
+let h = [{
           name: "Home",
-          path: "/home"
+          path: "/home",
+          onClick: (e) => {
+            e.preventDefault();
+            router.push("/home");
+            setTimeout(() => {
+              window.location.reload();
+            }, 100);
+          }
         }, {
           name: "Games",
-          path: "/games"
+          path: "/games",
+          onClick: (e) => {
+            e.preventDefault();
+            router.push("/games");
+            setTimeout(() => {
+              window.location.reload();
+            }, 100);
+          }
         }, {
           name: "Showcases",
           path: "https://www.youtube.com/@MoveeMenu",
           external: !0
         }, {
           name: "Pricing",
-          path: "/pricing"
+          path: "/pricing",
+          onClick: (e) => {
+            e.preventDefault();
+            router.push("/pricing");
+            setTimeout(() => {
+              window.location.reload();
+            }, 100);
+          }
         }];
         
         return (0, n.jsxs)(n.Fragment, {
@@ -323,3 +344,4 @@
     }
   }
 ])
+
