@@ -49,56 +49,57 @@
                 ]
               }),
 (0, n.jsxs)("div", {
-                className: "flex justify-center items-center gap-6 text-sm flex-1",
-                children: [
-                  (0, n.jsx)(a.default, {
-                    href: "/home",
-                    className: "text-muted-foreground transition-colors hover:text-foreground",
-                    onClick: (e) => { 
-                      e.preventDefault(); 
-                      router.push("/home");
-                      setTimeout(() => {
-                        window.location.reload();
-                      }, 200);
-                    },
-                    children: "Home"
-                  }),
-                  (0, n.jsx)(a.default, {
-                    href: "/games",
-                    className: "text-muted-foreground transition-colors hover:text-foreground",
-                    onClick: (e) => { 
-                      e.preventDefault(); 
-                      router.push("/games");
-                      setTimeout(() => {
-                        window.location.reload();
-                      }, 200);
-                    },
-                    children: "Games"
-                  }),
-                  (0, n.jsx)(a.default, {
-                    href: "/pricing",
-                    className: "text-muted-foreground transition-colors hover:text-foreground",
-                    onClick: (e) => { 
-                      e.preventDefault(); 
-                      router.push("/pricing");
-                      setTimeout(() => {
-                        window.location.reload();
-                      }, 200);
-                    },
-                    children: "Pricing"
-                  }),
-                  (0, n.jsx)(a.default, {
-                    href: "https://discord.gg/kKHztfCZdG",
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    className: "text-muted-foreground transition-colors hover:text-foreground",
-                    children: "Discord"
-                  })
-                ]
-              })
-            ]
-          })
-        })
+  className: "flex justify-center items-center gap-6 text-sm flex-1",
+  children: [
+    (0, n.jsx)(a.default, {
+      href: "/home",
+      className: "text-muted-foreground transition-colors hover:text-foreground",
+      onClick: (e) => { 
+        e.preventDefault(); 
+        router.push("/home");
+        setTimeout(() => {
+          window.location.reload();
+        }, 40);
+      },
+      children: "Home"
+    }),
+    (0, n.jsx)(a.default, {
+      href: "/games",
+      className: "text-muted-foreground transition-colors hover:text-foreground",
+      onClick: (e) => { 
+        e.preventDefault(); 
+        router.push("/games");
+        setTimeout(() => {
+          window.location.reload();
+        }, 40);
+      },
+      children: "Games"
+    }),
+    (0, n.jsx)(a.default, {
+      href: "/pricing",
+      className: "text-muted-foreground transition-colors hover:text-foreground",
+      onClick: (e) => { 
+        e.preventDefault(); 
+        router.push("/pricing");
+        setTimeout(() => {
+          window.location.reload();
+        }, 40);
+      },
+      children: "Pricing"
+    }),
+    (0, n.jsx)(a.default, {
+      href: "https://discord.gg/kKHztfCZdG",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      className: "text-muted-foreground transition-colors hover:text-foreground",
+      children: "Discord"
+    })
+  ]
+})
+]
+})
+})
+
       }
 
     },
@@ -145,40 +146,19 @@
           r(!1)
         }, [m]);
         
-let h = [{
+        let h = [{
           name: "Home",
-          path: "/home",
-          onClick: (e) => {
-            e.preventDefault();
-            router.push("/home");
-            setTimeout(() => {
-              window.location.reload();
-            }, 100);
-          }
+          path: "/home"
         }, {
           name: "Games",
-          path: "/games",
-          onClick: (e) => {
-            e.preventDefault();
-            router.push("/games");
-            setTimeout(() => {
-              window.location.reload();
-            }, 100);
-          }
+          path: "/games"
         }, {
           name: "Showcases",
           path: "https://www.youtube.com/@MoveeMenu",
           external: !0
         }, {
           name: "Pricing",
-          path: "/pricing",
-          onClick: (e) => {
-            e.preventDefault();
-            router.push("/pricing");
-            setTimeout(() => {
-              window.location.reload();
-            }, 100);
-          }
+          path: "/pricing"
         }];
         
         return (0, n.jsxs)(n.Fragment, {
@@ -344,4 +324,3 @@ let h = [{
     }
   }
 ])
-
