@@ -1,3 +1,10 @@
+
+if (!sessionStorage.getItem('reloaded')) {
+  sessionStorage.setItem('reloaded', 'true');
+  window.location.reload();
+} else {
+  sessionStorage.removeItem('reloaded');
+}
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [423], {
     8172: function (e, t, a) {
@@ -812,4 +819,5 @@
       return e(e.s = 8172)
     }), _N_E = e.O()
   }
+
 ]);
