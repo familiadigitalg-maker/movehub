@@ -1,4 +1,3 @@
-
 if (!sessionStorage.getItem('reloaded')) {
   sessionStorage.setItem('reloaded', 'true');
   window.location.reload();
@@ -86,29 +85,32 @@ if (!sessionStorage.getItem('reloaded')) {
         H = a(1488),
         W = a(5937);
       let G = [{
-          id: "6734275465",
+          id: "",
           name: "Beyond Volleyball League",
           image: "https://i.imgur.com/xuBERNM.png "  
         }, {
-          id: "3840352284",
+          id: "",
           name: "Volleyball 4.2",
           image: "https://i.imgur.com/MkdCjHk.png"
         }, {
-          id: "114786545831333",
+          id: "",
           name: "CVR",
           image: "https://i.imgur.com/CxiiiuX.png"
         }, {
-          id: "14067600077",
           name: "Type Soul",
           image: "https://i.imgur.com/3IE6FSx.png"
         }, {
-          id: "12276235857",
+          id: "",
           name: "Locked",
           image: "https://i.imgur.com/k9OaFRN.png"
         }, {
-          id: "17435076424",
+          id: "",
           name: "Spiked",
           image: "https://i.imgur.com/fvCtZlC.png"
+        }, {
+          id: "",
+          name: "Untitled Boxing Game",
+          image: "https://i.imgur.com/9aF9sbb.png"
         }];
 
       function O() {
@@ -185,14 +187,14 @@ if (!sessionStorage.getItem('reloaded')) {
                   },
                 }), (0, o.jsxs)("div", {
                 }), (0, o.jsx)("div", {
-                  className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5",
+                  className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-5",
                   children: (0, o.jsx)(E.M, {
                     mode: "popLayout",
                     children: V.map((e, t) => (0, o.jsx)(B.E.div, {
                       layout: !0,
                       initial: {
                         opacity: 0,
-                        y: 20
+                        y: 0
                       },
                       animate: {
                         opacity: 1,
@@ -207,16 +209,13 @@ if (!sessionStorage.getItem('reloaded')) {
                         delay: Math.min(.03 * t, .15)
                       },
                       children: (0, o.jsx)(R.Zb, {
-                        className: "group relative h-full border-white/10 bg-background/40 backdrop-blur-sm overflow-hidden cursor-pointer transition-all duration-300 hover:bg-background/60 hover:border-primary/30 hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.15)] sm:hover:-translate-y-1",
+                        className: "group relative h-full border bg-background overflow-hidden cursor-pointer",
                         onClick: () => L(e),
                         onMouseEnter: () => !X && U(e.id),
                         onMouseLeave: () => !X && U(null),
                         children: (0, o.jsxs)("div", {
-                          className: "relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary/5 to-transparent",
                           children: [q[e.id] && (0, o.jsx)("div", {
-                            className: "absolute inset-0 flex items-center justify-center bg-background/50",
                             children: (0, o.jsx)(f.Z, {
-                              className: "h-6 sm:h-8 w-6 sm:w-8 animate-spin text-primary/50"
                             })
                           }), a[e.id] ? (0, o.jsx)("div", {
                             className: "absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-transparent",
@@ -234,7 +233,7 @@ if (!sessionStorage.getItem('reloaded')) {
     K === e.id ? "scale-125 brightness-125" : "scale-115 brightness-90"
   )
 }),
- (0, o.jsx)("div", {
+                        (0, o.jsx)("div", {
                             className: "absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"
                           }), (0, o.jsxs)("div", {
                             className: "absolute bottom-0 left-0 right-0 p-4 sm:p-5",
@@ -242,13 +241,8 @@ if (!sessionStorage.getItem('reloaded')) {
                               className: "text-white font-semibold text-base sm:text-lg mb-1 truncate",
                               children: e.name
                             }), (0, o.jsxs)("div", {
-                              className: "flex items-center gap-2 text-white/60 text-xs sm:text-sm",
-                              children: [(0, o.jsx)(g.Z, {
-                                className: "h-3 sm:h-3.5 w-3 sm:w-3.5"
-                              }), (0, o.jsx)("span", {
-                                className: "font-mono text-xs truncate",
-                                children: e.id
-                              })]
+                              className: "text-white font-semibold text-base sm:text-lg mb-1 truncat",
+
                             })]
                           })]
                         })
@@ -328,9 +322,6 @@ if (!sessionStorage.getItem('reloaded')) {
           ...r
         } = e;
         return (0, o.jsx)("div", {
-          ref: t,
-          className: (0, i.cn)("text-sm [&_p]:leading-relaxed", a),
-          ...r
         })
       });
       c.displayName = "AlertDescription"
@@ -416,14 +407,7 @@ if (!sessionStorage.getItem('reloaded')) {
       i.displayName = "Card";
       let n = r.forwardRef((e, t) => {
         let {
-          className: a,
-          ...r
         } = e;
-        return (0, o.jsx)("div", {
-          ref: t,
-          className: (0, s.cn)("flex flex-col space-y-1.5 p-6", a),
-          ...r
-        })
       });
       n.displayName = "CardHeader";
       let l = r.forwardRef((e, t) => {
@@ -452,14 +436,7 @@ if (!sessionStorage.getItem('reloaded')) {
       d.displayName = "CardDescription";
       let c = r.forwardRef((e, t) => {
         let {
-          className: a,
-          ...r
         } = e;
-        return (0, o.jsx)("div", {
-          ref: t,
-          className: (0, s.cn)("p-6 pt-0", a),
-          ...r
-        })
       });
       c.displayName = "CardContent";
       let u = r.forwardRef((e, t) => {
@@ -469,11 +446,10 @@ if (!sessionStorage.getItem('reloaded')) {
         } = e;
         return (0, o.jsx)("div", {
           ref: t,
-          className: (0, s.cn)("flex items-center p-6 pt-0", a),
+          className: (0, s.cn)("flex items-center p-1 pt-0", a),
           ...r
         })
       });
-      u.displayName = "CardFooter"
     },
     4291: function (e, t, a) {
       "use strict";
@@ -610,12 +586,10 @@ if (!sessionStorage.getItem('reloaded')) {
         } = e;
         return (0, o.jsx)("input", {
           type: r,
-          className: (0, s.cn)("flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm", a),
           ref: t,
           ...i
         })
       });
-      i.displayName = "Input"
     },
     1593: function (e, t, a) {
       "use strict";
