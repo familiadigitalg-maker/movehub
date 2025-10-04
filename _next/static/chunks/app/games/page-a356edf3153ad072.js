@@ -111,6 +111,10 @@ if (!sessionStorage.getItem('reloaded')) {
           id: "",
           name: "Untitled Boxing Game",
           image: "https://i.imgur.com/9aF9sbb.png"
+        }, {
+          id: "",
+          name: "Karate",
+          image: "https://i.imgur.com/ShZLhcK.png"
         }];
 
       function O() {
