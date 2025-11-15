@@ -365,7 +365,7 @@ let g = (planType, planPrice) => {
   className: "text-center mt-12",
   children: [
     (0, s.jsx)("h2", { className: "text-3xl font-bold", children: "After buying create a ticket on discord" }),
-    (0, s.jsx)("h2", { className: "text-1.5xl font-semi-bold mt-2", children: "Made with love by CazBest" })
+    (0, s.jsx)("h2", { className: "text-1.5xl font-semi-bold mt-2", children: "Made with love by Move Hub Owner" })
   ]
 })
 
@@ -411,3 +411,4 @@ function Z() {
     }), _N_E = e.O()
   }
 ]);
+
