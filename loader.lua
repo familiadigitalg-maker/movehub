@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://cdn.authguard.org/virtual-file/bba8b7cad02a45e49a2121d50c70fa5d"))()
+loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/6bbfcc882c2a32518a8da956d98a5c97bedbfe653428e642e899fec82552ea90/download"))()
