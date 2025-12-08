@@ -327,10 +327,7 @@ let g = (planType, planPrice) => {
     
     // Lista de cupons válidos (adicione seus cupons aqui)
     const validCoupons = [
-      "DESCONTO10",
-      "MOVEHUB50",
-      "LIFETIME2024",
-      "PROMO15"
+      "#GBXIT"
     ];
     
     // Verifica se há cupom preenchido e se é válido (apenas para lifetime)
