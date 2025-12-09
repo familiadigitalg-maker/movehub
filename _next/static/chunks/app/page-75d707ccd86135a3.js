@@ -290,7 +290,7 @@ return (0, s.jsx)("section", {
         (0, s.jsx)("div", {
           className: "relative w-32 h-32 rounded-full overflow-hidden border-2 border-white/50",
           children: (0, s.jsx)("img", {
-            src: "https://i.imgur.com/gPfskD7.gif",
+            src: "https://i.imgur.com/dx8lV9Y.png",
             alt: "dev avatar",
             className: "object-cover w-32 h-32"
           })
@@ -300,7 +300,7 @@ return (0, s.jsx)("section", {
           children: [
             (0, s.jsx)("h2", {
               className: "text-2xl font-bold text-white",
-              children: "cazbest"
+              children: "Move Hub"
             }),
             (0, s.jsx)("p", {
               className: "text-gray-400",
@@ -336,4 +336,5 @@ return (0, s.jsx)("section", {
     }), _N_E = e.O()
   }
 ]);
+
 
