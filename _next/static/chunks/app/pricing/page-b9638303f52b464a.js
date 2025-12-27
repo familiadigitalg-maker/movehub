@@ -177,7 +177,6 @@ function N() {
   document.head.appendChild(link);
 });
 
-// SUBSTITUA A FUNÇÃO g EXISTENTE POR ESTA
 let g = (planType, planPrice) => {
   f({ type: planType, price: planPrice });
 
@@ -185,163 +184,283 @@ let g = (planType, planPrice) => {
     const style = document.createElement("style");
     style.id = "glow-style";
     style.innerHTML = `
+      @keyframes modalFadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      
+      @keyframes glowPulse {
+        0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
+        50% { box-shadow: 0 0 35px rgba(139, 92, 246, 0.7); }
+      }
+
       .payment-option {
         position: relative;
-        overflow: visible;
-        transition: all 0.3s ease;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: linear-gradient(135deg, rgba(30, 30, 60, 0.5), rgba(20, 20, 40, 0.7));
       }
-      .payment-option .glow {
+      
+      .payment-option::before {
+        content: '';
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        pointer-events: none;
-        box-shadow: 0 0 0 rgba(255,255,255,0);
-        transition: box-shadow 0.3s ease;
-        z-index: 10;
-      }
-      .payment-option:hover .glow {
-        box-shadow: 0 0 5px 2px rgba(255,255,255,0.3);
-      }
-      .payment-option.selected .glow {
-        box-shadow: 0 0 10px 5px rgba(255,255,255,0.8);
-      }
-      .modal-content {
-        transform: scale(0.8);
+        padding: 2px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
         opacity: 0;
-        transition: all 0.3s ease, box-shadow 0.3s ease;
+        transition: opacity 0.4s;
       }
+
+      .payment-option:hover::before {
+        opacity: 0.7;
+      }
+
+      .payment-option.selected::before {
+        opacity: 1;
+        animation: glowPulse 2s infinite;
+      }
+
+      .payment-option:hover {
+        transform: translateY(-3px);
+        background: linear-gradient(135deg, rgba(40, 40, 70, 0.7), rgba(30, 30, 50, 0.8));
+      }
+
+      .payment-option.selected {
+        transform: translateY(-3px);
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.25), rgba(118, 75, 162, 0.25));
+      }
+
+      .modal-backdrop {
+        animation: modalFadeIn 0.3s ease-out;
+        backdrop-filter: blur(12px);
+      }
+
+      .modal-content {
+        animation: modalFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 120px rgba(139, 92, 246, 0.25);
+      }
+
       .modal-content.show {
         transform: scale(1);
         opacity: 1;
       }
+
       .modal-content:hover {
-        box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7), 0 0 140px rgba(139, 92, 246, 0.3);
       }
+
       .coupon-section {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px dashed rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        padding: 12px;
-        margin-bottom: 16px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(236, 72, 153, 0.12));
+        border: 2px dashed rgba(139, 92, 246, 0.4);
+        border-radius: 12px;
+        padding: 18px;
+        margin-bottom: 22px;
+        transition: all 0.3s;
       }
+
+      .coupon-section:hover {
+        border-color: rgba(139, 92, 246, 0.6);
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(236, 72, 153, 0.18));
+        transform: translateY(-2px);
+      }
+
       .coupon-input {
         width: 100%;
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 6px;
-        padding: 8px 12px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 2px solid rgba(139, 92, 246, 0.4);
+        border-radius: 10px;
+        padding: 14px 18px;
         color: white;
-        font-size: 14px;
-        transition: all 0.3s ease;
+        font-size: 15px;
+        transition: all 0.3s;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 1.5px;
+        font-weight: 600;
       }
+
       .coupon-input:focus {
         outline: none;
-        border-color: rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        border-color: rgba(139, 92, 246, 0.9);
+        box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+        background: rgba(0, 0, 0, 0.7);
       }
+
       .coupon-input::placeholder {
-        color: rgba(255, 255, 255, 0.4);
+        color: rgba(255, 255, 255, 0.35);
+        letter-spacing: 1px;
+      }
+
+      .proceed-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .proceed-btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .proceed-btn:hover::before {
+        width: 350px;
+        height: 350px;
+      }
+
+      .proceed-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(139, 92, 246, 0.5);
+      }
+
+      .proceed-btn:active {
+        transform: translateY(-1px);
       }
     `;
     document.head.appendChild(style);
   }
 
   const modal = document.createElement("div");
-  modal.className = "fixed inset-0 bg-black/50 flex items-center justify-center z-50";
-
+  modal.className = "modal-backdrop fixed inset-0 bg-black/75 flex items-center justify-center z-50 p-4";
+  
   const couponSection = planType === "lifetime" ? `
     <div class="coupon-section">
-      <label class="block text-sm font-medium mb-2">🎟️ Tem um cupom de desconto?</label>
-      <input type="text" id="couponInput" class="coupon-input" placeholder="Digite seu código de cupom" />
+      <label class="block text-sm font-bold mb-3 text-white flex items-center gap-2">
+        <span class="text-2xl">🎟️</span>
+        <span>Tem um cupom de desconto?</span>
+      </label>
+      <input 
+        type="text" 
+        id="couponInput" 
+        class="coupon-input" 
+        placeholder="DIGITE SEU CÓDIGO"
+      />
     </div>
-  ` : "";
+  ` : '';
 
   modal.innerHTML = `
-    <div class="modal-content bg-background border border-border/50 rounded-xl p-8 w-[400px] max-w-[95vw]">
-      <h2 class="text-xl font-bold mb-4 text-center">Choose Payment Method</h2>
-      <p class="mb-4 text-sm text-center">Select how you would like to pay ${planType}</p>
+    <div class="modal-content rounded-2xl p-8 w-[450px] max-w-[95vw] border-2 border-purple-500/40">
+      <h2 class="text-3xl font-black mb-2 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Choose Payment Method</h2>
+      <p class="mb-6 text-sm text-center text-gray-400">Select how you would like to pay for <span class="font-bold text-purple-400">${planType}</span></p>
 
       ${couponSection}
 
       <div class="space-y-4 mb-6">
-        <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer" data-method="PayPal">
-          <span class="glow"></span>
-          PayPal <span>${planType === "weekly" ? "$1.50" : planType === "monthly" ? "$3.00" : "$6.00"}</span>
+        <div class="payment-option flex items-center justify-between p-5 rounded-xl cursor-pointer text-base font-semibold border border-transparent" data-method="PayPal">
+          <span class="flex items-center gap-3">
+            <span class="text-2xl">💳</span>
+            <span>PayPal</span>
+          </span>
+          <span class="text-purple-400 font-bold text-lg">${
+            planType === "weekly" ? "$2.5" :
+            planType === "monthly" ? "$6" :
+            planType === "lifetime" ? "$10" : ""
+          }</span>
         </div>
 
-        <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer" data-method="Robux">
-          <span class="glow"></span>
-          Robux <span>${planType === "weekly" ? "100" : planType === "monthly" ? "250" : "600"}</span>
+        <div class="payment-option flex items-center justify-between p-5 rounded-xl cursor-pointer text-base font-semibold border border-transparent" data-method="Robux">
+          <span class="flex items-center gap-3">
+            <span class="text-2xl">🎮</span>
+            <span>Robux</span>
+          </span>
+          <span class="text-purple-400 font-bold text-lg">${
+            planType === "weekly" ? "400" :
+            planType === "monthly" ? "600" :
+            planType === "lifetime" ? "1000" : ""
+          }</span>
         </div>
 
-        <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer" data-method="Pix">
-          <span class="glow"></span>
-          Pix <span>${planType === "weekly" ? "R$ 3,00" : planType === "monthly" ? "R$ 5,50" : "R$ 10,00"}</span>
+        <div class="payment-option flex items-center justify-between p-5 rounded-xl cursor-pointer text-base font-semibold border border-transparent" data-method="Pix">
+          <span class="flex items-center gap-3">
+            <span class="text-2xl">🇧🇷</span>
+            <span>Pix</span>
+          </span>
+          <span class="text-purple-400 font-bold text-lg">${
+            planType === "weekly" ? "R$ 7,00" :
+            planType === "monthly" ? "R$ 9,90" :
+            planType === "lifetime" ? "R$ 17,00" : ""
+          }</span>
         </div>
       </div>
 
-      <button id="proceedPayment" class="w-full bg-primary py-4 rounded-lg mb-4">Proceed to Payment</button>
-      <button class="w-full py-2 text-muted-foreground" onclick="this.closest('div').parentNode.remove()">Cancel</button>
+      <button id="proceedPayment" class="proceed-btn w-full text-white font-bold py-4 rounded-xl text-center mb-4 relative text-lg">
+        <span class="relative z-10">Proceed to Payment →</span>
+      </button>
+      <button class="w-full py-3 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/10 font-medium" onclick="this.closest('div').parentNode.remove()">Cancel</button>
     </div>
   `;
 
   document.body.appendChild(modal);
 
-  setTimeout(() => modal.querySelector(".modal-content").classList.add("show"), 10);
+  const modalContent = modal.querySelector(".modal-content");
+  setTimeout(() => modalContent.classList.add("show"), 10);
 
+  const options = modal.querySelectorAll(".payment-option");
   let selectedMethod = null;
-  modal.querySelectorAll(".payment-option").forEach(opt => {
-    opt.addEventListener("click", () => {
-      modal.querySelectorAll(".payment-option").forEach(o => o.classList.remove("selected"));
-      opt.classList.add("selected");
-      selectedMethod = opt.dataset.method;
+
+  options.forEach(option => {
+    option.addEventListener("click", () => {
+      options.forEach(o => o.classList.remove("selected"));
+      option.classList.add("selected");
+      selectedMethod = option.dataset.method;
     });
   });
 
   modal.querySelector("#proceedPayment").addEventListener("click", () => {
-    if (!selectedMethod) return;
-
-    const validCoupons = ["#GBXIT"];
-    const couponInput = modal.querySelector("#couponInput");
-    const couponCode = couponInput ? couponInput.value.trim().toUpperCase() : "";
-    const hasValidCoupon = couponCode && validCoupons.includes(couponCode);
+    if (!selectedMethod) {
+      alert("⚠️ Por favor, selecione um método de pagamento!");
+      return;
+    }
 
     let url = "";
+    
+    const validCoupons = [
+      "#GBXIT"
+    ];
+    
+    const couponInput = modal.querySelector("#couponInput");
+    const couponCode = couponInput ? couponInput.value.trim().toUpperCase() : "";
+    const hasValidCoupon = couponCode !== "" && validCoupons.includes(couponCode);
 
     if (selectedMethod === "PayPal") {
-      url = planType === "weekly"
-        ? "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=1.5&currency_code=USD"
-        : planType === "monthly"
-        ? "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=3&currency_code=USD"
-        : "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=6&currency_code=USD";
-    }
-
-    if (selectedMethod === "Robux") {
-      url = planType === "weekly"
-        ? "https://www.roblox.com/catalog/86763827406678/Weekly"
-        : planType === "monthly"
-        ? "https://www.roblox.com/catalog/109090893623975/Monthly"
-        : "https://www.roblox.com/catalog/112388426174566/Lifetime";
-    }
-
-    if (selectedMethod === "Pix") {
-      if (planType === "lifetime" && couponCode && !hasValidCoupon) {
-        alert("❌ Cupom inválido!");
-        return;
+      if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=1.5&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
+      else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=3&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
+      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=6&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
+    } else if (selectedMethod === "Robux") {
+      if (planType === "weekly") url = "https://www.roblox.com/catalog/86763827406678/Weekly";
+      else if (planType === "monthly") url = "https://www.roblox.com/catalog/109090893623975/Monthly";
+      else url = "https://www.roblox.com/catalog/112388426174566/Lifetime";
+    } else if (selectedMethod === "Pix") {
+      if (planType === "weekly") url = "/weekpix";
+      else if (planType === "monthly") url = "/monthpix";
+      else {
+        if (couponCode !== "" && !hasValidCoupon) {
+          alert("❌ Cupom inválido! Verifique o código e tente novamente.");
+          return;
+        }
+        url = hasValidCoupon ? "/lifetimepixcupom" : "/lifetimepix";
       }
-      url = planType === "weekly"
-        ? "/weekpix"
-        : planType === "monthly"
-        ? "/monthpix"
-        : hasValidCoupon
-        ? "/lifetimepixcupom"
-        : "/lifetimepix";
     }
 
-    window.open(url, "_blank");
+    if (url) window.open(url, "_blank");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.remove();
   });
 };
-
 
 
   return (0, s.jsxs)("section", {
