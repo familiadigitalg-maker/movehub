@@ -162,7 +162,7 @@ modal.innerHTML = `
     <img src="https://i.imgur.com/YkgnpOx.png" class="w-48 h-48" alt="QR CODE">
           <p class="font-bold text-sm">Pix Copia e Cola</p>
     <div class="flex items-center gap-2">
-<input type="text" readonly value="00020126470014BR.GOV.BCB.PIX0125bernardopbbueno@gmail.com520400005303986540517.005802BR5901N6001C62110507MoveHub63043BD6" class="border p-1 rounded bg-black text-white"/>
+<input type="text" readonly value="00020126470014BR.GOV.BCB.PIX0125bernardopbbueno@gmail.com520400005303986540510.005802BR5908Move Hub6013Nao interessa62070503***630495CC" class="border p-1 rounded bg-black text-white"/>
       <button id="copyPix" class="bg-blue-500 text-white px-3 py-1 rounded">Copiar</button>
     </div>
   </div>
