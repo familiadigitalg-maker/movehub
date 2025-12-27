@@ -364,9 +364,9 @@ let g = (planType, planPrice) => {
             <span>PayPal</span>
           </span>
           <span class="text-purple-400 font-bold text-lg">${
-            planType === "weekly" ? "$1" :
-            planType === "monthly" ? "$2.5" :
-            planType === "lifetime" ? "$5" : ""
+            planType === "weekly" ? "$1,00" :
+            planType === "monthly" ? "$2.50" :
+            planType === "lifetime" ? "$6,00" : ""
           }</span>
         </div>
 
@@ -376,8 +376,8 @@ let g = (planType, planPrice) => {
             <span>Robux</span>
           </span>
           <span class="text-purple-400 font-bold text-lg">${
-            planType === "weekly" ? "100" :
-            planType === "monthly" ? "250" :
+            planType === "weekly" ? "250" :
+            planType === "monthly" ? "300" :
             planType === "lifetime" ? "600" : ""
           }</span>
         </div>
@@ -388,8 +388,8 @@ let g = (planType, planPrice) => {
             <span>Pix</span>
           </span>
           <span class="text-purple-400 font-bold text-lg">${
-            planType === "weekly" ? "R$ 2,50" :
-            planType === "monthly" ? "R$ 4,50" :
+            planType === "weekly" ? "R$ 3,00" :
+            planType === "monthly" ? "R$ 6,00" :
             planType === "lifetime" ? "R$ 10,00" : ""
           }</span>
         </div>
