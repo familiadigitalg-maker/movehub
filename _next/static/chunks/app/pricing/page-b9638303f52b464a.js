@@ -159,9 +159,9 @@ let g = (planType, planPrice) => {
     const hasValidCoupon = couponCode !== "" && validCoupons.includes(couponCode);
 
     if (selectedMethod === "PayPal") {
-      if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2.5&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
-      else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=6&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
-      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=10&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
+      if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=1.50&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
+      else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=3&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
+      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=6&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
     } else if (selectedMethod === "Robux") {
       if (planType === "weekly") url = "https://www.roblox.com/catalog/86763827406678/Weekly";
       else if (planType === "monthly") url = "https://www.roblox.com/catalog/109090893623975/Monthly";
