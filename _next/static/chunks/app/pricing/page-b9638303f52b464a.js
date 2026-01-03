@@ -272,18 +272,18 @@ let g = (planType, planPrice) => {
         <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer text-base transition-all duration-400" data-method="PayPal">
           <span class="glow"></span>
           PayPal <span>${
-            planType === "weekly" ? "$1.5" :
-            planType === "monthly" ? "$3" :
-            planType === "lifetime" ? "$6" : ""
+            planType === "weekly" ? "$2.5" :
+            planType === "monthly" ? "$6" :
+            planType === "lifetime" ? "$10" : ""
           }</span>
         </div>
 
         <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer text-base transition-all duration-400" data-method="Robux">
           <span class="glow"></span>
           Robux <span>${
-            planType === "weekly" ? "100" :
-            planType === "monthly" ? "250" :
-            planType === "lifetime" ? "600" : ""
+            planType === "weekly" ? "250" :
+            planType === "monthly" ? "600" :
+            planType === "lifetime" ? "1000" : ""
           }</span>
         </div>
 
@@ -471,4 +471,5 @@ function Z() {
     }), _N_E = e.O()
   }
 ]);
+
 
