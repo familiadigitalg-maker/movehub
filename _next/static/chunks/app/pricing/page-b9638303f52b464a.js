@@ -290,9 +290,9 @@ let g = (planType, planPrice) => {
         <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer text-base transition-all duration-400" data-method="Pix">
           <span class="glow"></span>
           Pix <span>${
-            planType === "weekly" ? "R$ 3,00" :
-            planType === "monthly" ? "R$ 6,00" :
-            planType === "lifetime" ? "R$ 10,00" : ""
+            planType === "weekly" ? "R$ 5,00" :
+            planType === "monthly" ? "R$ 9,00" :
+            planType === "lifetime" ? "R$ 17,00" : ""
           }</span>
         </div>
       </div>
@@ -336,9 +336,9 @@ let g = (planType, planPrice) => {
     const hasValidCoupon = couponCode !== "" && validCoupons.includes(couponCode);
 
     if (selectedMethod === "PayPal") {
-      if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=1.5&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
-      else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=3&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
-      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=6&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
+      if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2.5&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
+      else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=6&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
+      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=10&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
     } else if (selectedMethod === "Robux") {
       if (planType === "weekly") url = "https://www.roblox.com/catalog/86763827406678/Weekly";
       else if (planType === "monthly") url = "https://www.roblox.com/catalog/109090893623975/Monthly";
@@ -471,5 +471,6 @@ function Z() {
     }), _N_E = e.O()
   }
 ]);
+
 
 
