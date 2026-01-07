@@ -290,7 +290,7 @@ let g = (planType, planPrice) => {
         <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer text-base transition-all duration-400" data-method="Pix">
           <span class="glow"></span>
           Pix <span>${
-            planType === "weekly" ? "R$ 5,00" :
+            planType === "weekly" ? "R$ 7,00" :
             planType === "monthly" ? "R$ 9,00" :
             planType === "lifetime" ? "R$ 17,00" : ""
           }</span>
@@ -471,6 +471,7 @@ function Z() {
     }), _N_E = e.O()
   }
 ]);
+
 
 
 
