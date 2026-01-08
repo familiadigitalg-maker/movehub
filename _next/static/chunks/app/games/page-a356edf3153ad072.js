@@ -94,7 +94,7 @@ if (!sessionStorage.getItem('reloaded')) {
           image: "https://i.imgur.com/MkdCjHk.png"
         }, {
           id: "",
-          name: "CVR",
+          name: "Old CVR",
           image: "https://i.imgur.com/CxiiiuX.png"
         }, {
           name: "Type Soul",
@@ -111,6 +111,14 @@ if (!sessionStorage.getItem('reloaded')) {
           id: "",
           name: "Untitled Boxing Game",
           image: "https://i.imgur.com/9aF9sbb.png"
+        }, {
+          id: "",
+          name: "The Strongest Battlegrounds",
+          image: "https://i.imgur.com/2raimJ8.png"
+        }, {
+          id: "",
+          name: "Volleyball Ascended",
+          image: "https://i.imgur.com/Vcowly1.png"
         }, {
           id: "",
           name: "Karate",
@@ -799,3 +807,4 @@ if (!sessionStorage.getItem('reloaded')) {
   }
 
 ]);
+
