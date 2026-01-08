@@ -159,10 +159,10 @@ modal.className = "fixed inset-0 bg-black/40 flex items-center justify-center z-
 modal.innerHTML = `
   <div class="bg-white p-6 rounded-lg flex flex-col items-center gap-4">
     <p class="font-bold text-lg">QR CODE</p>
-    <img src="https://i.imgur.com/weh0t5G.png" class="w-48 h-48" alt="QR CODE">
+    <img src="https://i.imgur.com/jbrMIYK.png" class="w-48 h-48" alt="QR CODE">
           <p class="font-bold text-sm">Pix Copia e Cola</p>
     <div class="flex items-center gap-2">
-<input type="text" readonly value="00020126420014BR.GOV.BCB.PIX0120scythehubb@gmail.com520400005303986540535.005802BR5901N6001C62110507MoveHub6304D3E0" class="border p-1 rounded bg-black text-white"/>
+<input type="text" readonly value="00020126420014BR.GOV.BCB.PIX0120scythehubb@gmail.com520400005303986540510.005802BR5901N6001C62110507MoveHub6304A28B" class="border p-1 rounded bg-black text-white"/>
       <button id="copyPix" class="bg-blue-500 text-white px-3 py-1 rounded">Copiar</button>
     </div>
   </div>
@@ -210,4 +210,5 @@ document.getElementById("copyPix").onclick = () => {
   }
 
 ]);
+
 
