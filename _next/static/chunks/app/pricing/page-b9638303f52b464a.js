@@ -274,24 +274,24 @@ let g = (planType, planPrice) => {
           PayPal <span>${
             planType === "weekly" ? "$2" :
             planType === "monthly" ? "$4" :
-            planType === "lifetime" ? "$10" : ""
+            planType === "lifetime" ? "8" : ""
           }</span>
         </div>
 
         <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer text-base transition-all duration-400" data-method="Robux">
           <span class="glow"></span>
           Robux <span>${
-            planType === "weekly" ? "250" :
-            planType === "monthly" ? "600" :
-            planType === "lifetime" ? "1000" : ""
+            planType === "weekly" ? "200" :
+            planType === "monthly" ? "400" :
+            planType === "lifetime" ? "800" : ""
           }</span>
         </div>
 
         <div class="payment-option flex items-center justify-between p-4 border border-border rounded cursor-pointer text-base transition-all duration-400" data-method="Pix">
           <span class="glow"></span>
           Pix <span>${
-            planType === "weekly" ? "R$ 10,00" :
-            planType === "monthly" ? "R$ 20,00" :
+            planType === "weekly" ? "R$ 8,00" :
+            planType === "monthly" ? "R$ 15,00" :
             planType === "lifetime" ? "R$ 35,00" : ""
           }</span>
         </div>
@@ -338,7 +338,7 @@ let g = (planType, planPrice) => {
     if (selectedMethod === "PayPal") {
       if (planType === "weekly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=2&no_recurring=1&item_name=Move+Hub+Week&currency_code=USD";
       else if (planType === "monthly") url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=4&no_recurring=1&item_name=Move+Hub+Month&currency_code=USD";
-      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=10&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
+      else url = "https://www.paypal.com/donate/?business=6BCAN9W5KGE3A&amount=8&no_recurring=1&item_name=Move+Hub+Lifetime&currency_code=USD";
     } else if (selectedMethod === "Robux") {
       if (planType === "weekly") url = "https://www.roblox.com/catalog/86763827406678/Weekly";
       else if (planType === "monthly") url = "https://www.roblox.com/catalog/109090893623975/Monthly";
@@ -471,6 +471,7 @@ function Z() {
     }), _N_E = e.O()
   }
 ]);
+
 
 
 
