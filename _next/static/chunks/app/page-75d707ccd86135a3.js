@@ -156,7 +156,7 @@ if (!sessionStorage.getItem('reloaded')) {
                     children: "Get Started Now"
                   })
                 }), (0, s.jsx)(c.default, {
-                  href: "https://discord.gg/kKHztfCZdG",
+                  href: "https://discord.gg/sfcdnwPY5S",
                   target: "_blank",
                   rel: "noopener noreferrer",
                   children: (0, s.jsx)(d.z, {
@@ -336,5 +336,6 @@ return (0, s.jsx)("section", {
     }), _N_E = e.O()
   }
 ]);
+
 
 
