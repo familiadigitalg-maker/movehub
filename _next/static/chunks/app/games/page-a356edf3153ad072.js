@@ -123,7 +123,12 @@ if (!sessionStorage.getItem('reloaded')) {
           id: "",
           name: "Karate",
           image: "https://i.imgur.com/ShZLhcK.png"
+        }, {
+          id: "",
+          name: "Devil Hunter",
+          image: "https://i.imgur.com/JNOGxAC.png"
         }];
+      
 
       function O() {
         let [e, t] = (0, v.useState)(!1), [a, D] = (0, v.useState)({}), [I, O] = (0, v.useState)(""), [V, z] = (0, v.useState)(G), [J, L] = (0, v.useState)(null), [K, U] = (0, v.useState)(null), [_, Y] = (0, v.useState)(null), [q, Q] = (0, v.useState)({}), [X, $] = (0, v.useState)(!1);
@@ -807,4 +812,5 @@ if (!sessionStorage.getItem('reloaded')) {
   }
 
 ]);
+
 
